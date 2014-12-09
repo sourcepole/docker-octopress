@@ -6,4 +6,4 @@ RUN apt-get update
 RUN apt-get upgrade
 
 # Install dependencies.
-RUN apt-get install build-essential git
+RUN apt-get install -y build-essential git
