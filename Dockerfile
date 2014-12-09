@@ -9,9 +9,8 @@ RUN apt-get upgrade
 RUN apt-get install -y build-essential git curl libssl-dev
 
 # Create a new user for Octopress.
-RUN useradd -m -g users octopress
-RUN gpasswd -a octopress sudo
-RUN echo "octopress:octopress" | chpasswd
+ADD add-user.bash /tmp/docker-build/
+RUN bash /tmp/docker-build/add-user.bash
 
 # Install rbenv and ruby-build plugin.
 USER octopress
