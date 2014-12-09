@@ -6,7 +6,7 @@ RUN apt-get update
 RUN apt-get upgrade
 
 # Install dependencies.
-RUN apt-get install -y build-essential git curl
+RUN apt-get install -y build-essential git curl libssl-dev
 
 # Create a new user for Octopress.
 RUN useradd -m -g users octopress
