@@ -14,7 +14,10 @@ RUN gpasswd -a octopress sudo
 RUN echo "octopress:octopress" | chpasswd
 
 # Install rbenv and ruby-build plugin.
-RUN su octopress
-RUN cd "$HOME"
+USER octopress
 RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 RUN git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+RUN echo '' >> ~/.profile
+RUN echo '# Initialize "rbenv".' >> ~/.profile
+RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.profile
+RUN echo 'eval "$(rbenv init -)"' >> ~/.profile
