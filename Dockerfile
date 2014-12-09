@@ -14,12 +14,8 @@ RUN bash /tmp/docker-build/add-user.bash
 
 # Install rbenv and ruby-build plugin.
 USER octopress
-RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-RUN git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-RUN echo '' >> ~/.profile
-RUN echo '# Initialize "rbenv".' >> ~/.profile
-RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.profile
-RUN echo 'eval "$(rbenv init -)"' >> ~/.profile
+ADD install-rbenv.bash /tmp/docker-build/
+RUN bash /tmp/docker-build/install-rbenv.bash
 
 # Install ruby.
 ADD install-ruby.bash /tmp/docker-build/
