@@ -21,3 +21,7 @@ RUN echo '' >> ~/.profile
 RUN echo '# Initialize "rbenv".' >> ~/.profile
 RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.profile
 RUN echo 'eval "$(rbenv init -)"' >> ~/.profile
+
+# Install ruby.
+ADD install-ruby.bash /tmp/docker-build/
+RUN bash /tmp/docker-build/install-ruby.bash
