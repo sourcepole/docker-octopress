@@ -20,3 +20,7 @@ RUN bash /tmp/docker-build/install-rbenv.bash
 # Install ruby.
 ADD install-ruby.bash /tmp/docker-build/
 RUN bash /tmp/docker-build/install-ruby.bash
+
+# Install Octopress
+ADD install-octopress.bash /tmp/docker-build/
+RUN bash /tmp/docker-build/install-octopress.bash
