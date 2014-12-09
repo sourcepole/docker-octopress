@@ -6,7 +6,7 @@ RUN apt-get update
 RUN apt-get upgrade
 
 # Install dependencies.
-RUN apt-get install -y build-essential git curl libssl-dev openssh-client
+RUN apt-get install -y build-essential git curl libssl-dev libunistring-dev openssh-client
 
 # Create a new user for Octopress.
 ADD add-user.bash /tmp/docker-build/
@@ -20,3 +20,7 @@ RUN bash /tmp/docker-build/install-rbenv.bash
 # Install ruby.
 ADD install-ruby.bash /tmp/docker-build/
 RUN bash /tmp/docker-build/install-ruby.bash
+
+# Install Octopress
+ADD install-octopress.bash /tmp/docker-build/
+RUN bash /tmp/docker-build/install-octopress.bash
