@@ -12,3 +12,9 @@ RUN apt-get install -y build-essential git
 RUN useradd -m -g users octopress
 RUN gpasswd -a octopress sudo
 RUN echo "octopress:octopress" | chpasswd
+
+# Install rbenv and ruby-build plugin.
+RUN su octopress
+RUN cd "$HOME"
+RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+RUN git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
