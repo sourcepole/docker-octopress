@@ -3,7 +3,7 @@ MAINTAINER kouse_tomoya@aratana.jp
 
 # Upgrade the system.
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 
 # Install dependencies.
 RUN apt-get install -y build-essential git curl libssl-dev libunistring-dev openssh-client nodejs
