@@ -2,6 +2,33 @@
 
 A docker image for Octopress.
 
+## Usage
+
+### Start container
+
+Just execute the following command:
+
+```
+docker run -i -t -p 4000 -n myoctopress -u octopress aratana/octopress /bin/bash -l
+```
+
+### Preview
+
+First, start the octopress server for preview.
+
+```
+cd ~/octopress
+rake preview
+```
+
+To check the mapping of port, execute `docker port` command:
+
+```
+docker port myoctopress 4000
+```
+
+Open the preview by accessing the docker host with the port obtained by `docker port`.
+
 ## License
 
 The MIT License (MIT)
