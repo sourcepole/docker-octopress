@@ -9,18 +9,18 @@ RUN apt-get upgrade -y
 RUN apt-get install -y build-essential git curl libssl-dev libunistring-dev openssh-client nodejs
 
 # Create a new user for Octopress.
-ADD add-user.bash /tmp/docker-build/
+ADD scripts/add-user.bash /tmp/docker-build/
 RUN bash /tmp/docker-build/add-user.bash
 
 # Install rbenv and ruby-build plugin.
 USER octopress
-ADD install-rbenv.bash /tmp/docker-build/
+ADD scripts/install-rbenv.bash /tmp/docker-build/
 RUN bash /tmp/docker-build/install-rbenv.bash
 
 # Install ruby.
-ADD install-ruby.bash /tmp/docker-build/
+ADD scripts/install-ruby.bash /tmp/docker-build/
 RUN bash /tmp/docker-build/install-ruby.bash
 
 # Install Octopress
-ADD install-octopress.bash /tmp/docker-build/
+ADD scripts/install-octopress.bash /tmp/docker-build/
 RUN bash /tmp/docker-build/install-octopress.bash
