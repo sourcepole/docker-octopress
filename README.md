@@ -34,7 +34,7 @@ Open the preview by accessing the host with the port obtained by `docker port`.
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Tomoya Kose
+Copyright (c) 2014 Aratana inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
