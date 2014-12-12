@@ -6,7 +6,7 @@ A docker image for Octopress.
 
 ### Start container
 
-Just execute the following command:
+Just execute the following command to enter the container:
 
 ```
 docker run -i -t -p 4000 -n myoctopress -u octopress aratana/octopress /bin/bash -l
@@ -15,19 +15,20 @@ docker run -i -t -p 4000 -n myoctopress -u octopress aratana/octopress /bin/bash
 ### Preview
 
 First, start the octopress server for preview.
+Execute `rake preview` in the octopress directory on the container.
 
 ```
 cd ~/octopress
 rake preview
 ```
 
-To check the mapping of port, execute `docker port` command:
+To check the mapping of port, execute `docker port` command on the host:
 
 ```
 docker port myoctopress 4000
 ```
 
-Open the preview by accessing the docker host with the port obtained by `docker port`.
+Open the preview by accessing the host with the port obtained by `docker port`.
 
 ## License
 
